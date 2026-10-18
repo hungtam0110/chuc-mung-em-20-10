@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thiệp 20/10 💗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--main:#FF8FB8;--b1:#FFF0F6;--b2:#FFD6E7;--b3:#E8D7FF;--text:#5a2a47;--glass:rgba(255,255,255,.62);--gb:rgba(255,255,255,.85);--field:rgba(255,255,255,.8);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--b1:#2b1530;--b2:#3a1b3f;--b3:#2a2149;--text:#ffe3f0;--glass:rgba(255,255,255,.1);--gb:rgba(255,255,255,.2);--field:rgba(255,255,255,.12)}}
+:root[data-theme="dark"]{--b1:#2b1530;--b2:#3a1b3f;--b3:#2a2149;--text:#ffe3f0;--glass:rgba(255,255,255,.1);--gb:rgba(255,255,255,.2);--field:rgba(255,255,255,.12)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;margin:0;overflow:hidden}
+body{font:500 16px/1.5 Quicksand,system-ui,sans-serif;color:var(--text);background:linear-gradient(160deg,var(--b1),var(--b2) 55%,var(--b3)) fixed}
+#fl{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+#fl i{position:absolute;bottom:-40px;font-style:normal;opacity:.55;animation:up linear infinite}
+#fl i:nth-child(even){bottom:auto;top:-40px;animation-name:dn}
+@keyframes up{to{transform:translateY(-115vh) rotate(40deg)}}
+@keyframes dn{to{transform:translateY(115vh) rotate(-40deg)}}
+#cf{position:fixed;inset:0;pointer-events:none;z-index:50}
+#app{position:relative;z-index:1;width:100%;max-width:480px;height:100%;margin:0 auto;overflow:hidden}
+@media(min-width:768px){#app{height:min(100%,860px);margin-top:max(0px,calc((100% - 860px)/2));border-radius:36px;box-shadow:0 20px 60px rgba(255,143,184,.35);border:1px solid var(--gb)}}
+.screen{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;padding:0 18px 70px;display:flex;flex-direction:column;visibility:hidden;opacity:0;filter:blur(6px);transform:translateX(100%) scale(.92);transition:transform .45s cubic-bezier(.4,0,.2,1),opacity .45s,filter .45s,visibility 0s .45s}
+.screen.l{transform:translateX(-100%) scale(.92)}
+.screen.on{visibility:visible;opacity:1;filter:none;transform:none;transition-delay:0s}
+.mid>:first-child{margin-top:auto}.mid>:last-child{margin-bottom:auto}
+.screen:not([data-o]) [data-a=next]{visibility:hidden}
+h1,h2{font-family:Pacifico,cursive;font-weight:400;margin:.3em 0;text-align:center;line-height:1.25}
+h1{font-size:clamp(28px,8.5vw,40px)}h2{font-size:clamp(22px,6.5vw,28px)}
+p{margin:.3em 0;text-align:center}
+.hero{font-size:clamp(36px,11vw,50px)}
+.heart{font-size:90px;text-align:center;animation:beat 1.2s infinite}
+@keyframes beat{30%{transform:scale(1.18)}60%{transform:scale(1)}}
+.bar{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:8px;padding:12px 0}
+.bar .sp{flex:1}
+.ib{width:44px;height:44px;border-radius:50%;border:1px solid var(--gb);background:var(--glass);backdrop-filter:blur(10px);font-size:18px;color:var(--text);cursor:pointer}
+.btn{border:0;border-radius:999px;padding:14px 22px;font:700 16px Quicksand,sans-serif;color:#4a1736;background:linear-gradient(135deg,var(--main),color-mix(in srgb,var(--main),#c9a7ff 55%));box-shadow:0 8px 20px color-mix(in srgb,var(--main) 45%,transparent);cursor:pointer;transition:transform .15s}
+.btn:active,.ib:active{transform:scale(.94)}
+.btn.ghost{background:var(--glass);color:var(--text);box-shadow:none;border:1px solid var(--gb);backdrop-filter:blur(10px)}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--main);outline-offset:2px}
+.glass{background:var(--glass);backdrop-filter:blur(14px);border:1px solid var(--gb);border-radius:28px;box-shadow:0 10px 30px color-mix(in srgb,var(--main) 25%,transparent)}
+.pill{align-self:center;margin:10px 0 18px;padding:8px 22px;border-radius:999px;background:var(--glass);border:1px solid var(--gb);font:700 20px Quicksand}
+.stack{display:flex;flex-direction:column;gap:12px;margin-bottom:16px}
+.row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}.row .btn{flex:1 1 auto;padding:12px 14px;font-size:14px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:14px 0}
+.cardb{padding:18px 12px;text-align:center;cursor:pointer;color:var(--text);font:inherit;transition:transform .15s}
+.cardb:active{transform:scale(.96)}.cardb b{display:block;font-size:17px}.cardb small{opacity:.8}.cardb span{font-size:32px;display:block}
+.card{position:relative;margin:12px 0;perspective:900px}
+.inner{padding:26px 22px;min-height:280px;white-space:pre-wrap;line-height:1.8;font-size:17px}
+.typing::after{content:"|";animation:blink .7s infinite}@keyframes blink{50%{opacity:0}}
+.cover{position:absolute;inset:0;border-radius:28px;background:linear-gradient(135deg,var(--main),#e8d7ff);display:grid;place-content:center;text-align:center;font:400 26px Pacifico,cursive;color:#4a1736;transform-origin:left center;transition:transform .8s ease,opacity .3s .6s;backface-visibility:hidden}
+.cover span{font-size:64px}
+.card.open .cover{transform:rotateY(-170deg);opacity:0;pointer-events:none}
+.env{position:relative;width:min(260px,80%);height:170px;margin:20px auto;background:linear-gradient(#ffc2d9,var(--main));border-radius:0 0 18px 18px;box-shadow:0 10px 24px rgba(255,143,184,.4)}
+.flap{position:absolute;top:0;left:0;right:0;height:105px;background:#ff9bc0;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .6s;text-align:center;padding-top:52px;font-size:28px}
+.env.open .flap{transform:rotateX(180deg)}
+.paper{display:none;background:#fffdf8;color:#5a2a47;border-radius:18px;padding:24px 22px;white-space:pre-wrap;line-height:1.8;font-size:17px;box-shadow:0 10px 30px rgba(0,0,0,.12);margin:8px 0}
+.paper.show{display:block;animation:rise .6s}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}}
+.big{text-align:center;font:700 22px Quicksand;margin:14px 0 6px}.big b{font:400 clamp(56px,20vw,84px) Pacifico;color:var(--main);display:block;line-height:1.1}
+.hms{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center;margin-bottom:16px}.hms div{padding:12px 4px}.hms b{display:block;font-size:30px}
+label{display:block;font-weight:700;font-size:14px;margin:12px 0}
+input,textarea{display:block;width:100%;margin-top:4px;padding:11px 14px;border-radius:16px;border:1.5px solid color-mix(in srgb,var(--main) 45%,transparent);background:var(--field);color:var(--text);font:500 16px Quicksand,sans-serif}
+input[type=color]{height:44px;padding:4px}input[type=range]{padding:0;border:0;background:none;accent-color:var(--main);margin:0}
+#m-main{aspect-ratio:1;width:100%;border-radius:28px;overflow:hidden;cursor:zoom-in;box-shadow:0 12px 30px color-mix(in srgb,var(--main) 35%,transparent)}
+.pv{width:100%;height:100%;animation:sl .35s}@keyframes sl{from{opacity:0;transform:translateX(calc(var(--d,1)*40px))}}
+.pv img{width:100%;height:100%;object-fit:cover;display:block}
+.ph{display:grid;place-items:center;font-size:96px;background:linear-gradient(135deg,var(--b2),var(--b3));width:100%;height:100%}
+.nav3{display:flex;align-items:center;justify-content:space-between;margin:12px 0}
+.dots{display:flex;gap:6px}.dots i{width:8px;height:8px;border-radius:50%;background:var(--gb);border:1px solid var(--main)}.dots i.a{background:var(--main)}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(62px,1fr));gap:8px;margin:12px 0}
+.thumbs>*{aspect-ratio:1;border-radius:14px;overflow:hidden;position:relative;border:0;padding:0;cursor:pointer;background:none}
+.thumbs .ph{font-size:30px}.thumbs img{width:100%;height:100%;object-fit:cover}
+.thumbs .x{position:absolute;top:2px;right:2px;width:24px;height:24px;border-radius:50%;background:#fff;color:#c0306a;display:grid;place-items:center;font-size:12px}
+.steps{display:flex;gap:8px;justify-content:center;margin:6px 0 14px}
+.steps button{width:48px;height:48px;border-radius:50%;border:2px solid var(--gb);background:var(--glass);font-size:22px;cursor:pointer}
+.steps button.a{background:var(--main);border-color:var(--main);transform:scale(1.12)}
+.tl{padding:20px;text-align:center;animation:sl .4s}.tl .em{font-size:44px}.tl small{font-weight:700;opacity:.8}.tl h3{margin:6px 0;font-size:20px}.tl img{width:100%;max-height:260px;object-fit:cover;border-radius:18px;margin-top:12px}
+.disc{width:150px;height:150px;border-radius:50%;margin:10px auto;display:grid;place-items:center;font-size:60px;background:conic-gradient(var(--main),var(--b3),var(--b2),var(--main));box-shadow:0 10px 30px color-mix(in srgb,var(--main) 40%,transparent)}
+.disc.spin{animation:sp 6s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}
+.pl{display:flex;align-items:center;gap:12px;margin:8px 0}.pl .ib{flex:none;width:54px;height:54px;font-size:22px}
+.hint{font-size:14px;opacity:.9;min-height:1.5em}
+#lb{position:fixed;inset:0;z-index:40;background:rgba(40,10,30,.88);display:flex;align-items:center;justify-content:center;padding:16px}
+#lb[hidden]{display:none}
+#lb .lbc{width:min(92vw,720px);height:min(80vh,720px);display:grid;place-items:center;animation:zm .35s}
+@keyframes zm{from{opacity:0;transform:scale(.6)}}
+#lb img{max-width:100%;max-height:100%;object-fit:contain;border-radius:14px}
+#lb .ph{width:min(80vw,400px);height:min(80vw,400px);border-radius:24px;font-size:140px}
+#lb .ib{position:absolute;color:#fff;background:rgba(255,255,255,.18)}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:#4a1736;color:#fff;padding:12px 20px;border-radius:999px;opacity:0;transition:.3s;z-index:60;pointer-events:none;max-width:90vw;text-align:center;font-size:15px}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
+</style>
+</head>
+<body>
+<div id="fl" aria-hidden="true"></div><canvas id="cf" aria-hidden="true"></canvas>
+<main id="app">
+<section class="screen on mid" id="s-splash"><div class="heart">💗</div><h1>Hey, có một món quà dành cho em...</h1><button class="btn" data-a="open" style="align-self:center;margin-top:18px">🎁 MỞ QUÀ</button></section>
+
+<section class="screen mid" id="s-home" data-o><h1 class="hero">Happy 20/10 🌷</h1><p>Tặng cô gái đặc biệt nhất ❤️</p><div class="pill" id="h-to"></div>
+<div class="stack"><button class="btn" data-a="go:greet">💌 Lời chúc</button><button class="btn" data-a="go:memories">📸 Kỷ niệm</button><button class="btn" data-a="go:counter">💕 Chúng mình</button><button class="btn" data-a="go:music">🎵 Âm nhạc</button><button class="btn" data-a="go:letter">💖 Điều anh muốn nói</button></div>
+<div class="row"><button class="btn ghost" data-a="go:menu">🗂️ Menu</button><button class="btn ghost" data-a="go:settings">⚙️ Chỉnh sửa</button><button class="btn ghost" data-a="share">🔗 Chia sẻ</button></div></section>
+
+<section class="screen" id="s-menu" data-bar><h2>💗 Món quà dành riêng cho em</h2>
+<div class="grid2">
+<button class="glass cardb" data-a="go:greet"><span>💌</span><b>Lời chúc</b><small>Một vài lời anh muốn nói</small></button>
+<button class="glass cardb" data-a="go:memories"><span>📸</span><b>Kỷ niệm</b><small>Những khoảnh khắc của chúng mình</small></button>
+<button class="glass cardb" data-a="go:counter"><span>💕</span><b>Chúng mình</b><small>Đã bên nhau bao lâu</small></button>
+<button class="glass cardb" data-a="go:timeline"><span>💞</span><b>Câu chuyện</b><small>Hành trình của chúng mình</small></button>
+<button class="glass cardb" data-a="go:music"><span>🎵</span><b>Bài hát</b><small>Bài hát dành cho em</small></button>
+<button class="glass cardb" data-a="go:letter"><span>💖</span><b>Điều anh muốn nói</b><small>Một lá thư nhỏ</small></button></div>
+<div class="row"><button class="btn ghost" data-a="share">🔗 Chia sẻ món quà</button><button class="btn ghost" data-a="go:settings">⚙️ Chỉnh sửa</button></div></section>
+
+<section class="screen" id="s-greet" data-bar data-o><h2>🌷 Lời chúc dành cho em</h2>
+<div class="card glass" id="card"><div class="inner" id="g-text"></div><div class="cover"><span>💌</span><div id="g-to"></div></div></div>
+<button class="btn" id="g-btn" data-a="openG" style="align-self:center">💌 Mở lời chúc</button></section>
+
+<section class="screen" id="s-counter" data-bar data-o><h2>💕 Chúng mình đã bên nhau</h2>
+<div class="glass" style="padding:4px 18px 18px"><label>Tên người yêu<input id="c-name" autocomplete="off"></label><label>Ngày bắt đầu yêu (dd/mm/yyyy)<input id="c-date" inputmode="numeric" placeholder="14/02/2025"></label><button class="btn" data-a="cupd" style="width:100%">💾 Cập nhật</button></div>
+<div class="big">❤️<b id="c-d">0</b>ngày</div><p class="hint" id="c-msg"></p>
+<div class="hms"><div class="glass"><b id="c-h">0</b>giờ</div><div class="glass"><b id="c-m">0</b>phút</div><div class="glass"><b id="c-s">0</b>giây</div></div></section>
+
+<section class="screen" id="s-memories" data-bar data-o><h2>📸 Những khoảnh khắc của chúng mình</h2>
+<div id="m-main" role="button" tabindex="0" aria-label="Xem ảnh toàn màn hình" data-a="ph"></div>
+<div class="nav3"><button class="ib" data-a="mp" aria-label="Ảnh trước">←</button><div class="dots" id="m-dots"></div><button class="ib" data-a="mn" aria-label="Ảnh sau">→</button></div>
+<div class="thumbs" id="m-grid"></div><p class="hint" id="m-note"></p>
+<button class="btn" data-a="addph" style="align-self:center">➕ Thêm ảnh</button></section>
+
+<section class="screen" id="s-timeline" data-bar data-o><h2>💞 Câu chuyện của chúng mình</h2><div class="steps" id="t-steps"></div><div class="glass tl" id="t-card"></div></section>
+
+<section class="screen" id="s-music" data-bar data-o><h2>🎵 Bài hát dành cho em</h2><div class="disc" id="disc">🎵</div><p><b id="mu-name"></b></p>
+<div class="pl nosw"><button class="ib" id="pp" data-a="pp" aria-label="Phát hoặc dừng">▶️</button><div style="flex:1"><input type="range" id="mu-pg" min="0" max="1000" value="0" aria-label="Tiến trình"><small id="mu-t">0:00 / 0:00</small></div></div>
+<div class="pl nosw">🔊<input type="range" id="mu-vol" min="0" max="1" step=".05" value=".8" aria-label="Âm lượng"></div>
+<input type="file" id="fa" accept="audio/*,.mp3,.m4a,.wav,.ogg" hidden><button class="btn ghost" data-a="pickA" style="align-self:center;margin-bottom:10px">🎶 Chọn file nhạc</button><p class="hint" id="mu-file"></p>
+<button class="btn" data-a="startM" style="align-self:center">🎵 Bắt đầu nghe</button><p class="hint" id="mu-hint"></p></section>
+
+<section class="screen" id="s-letter" data-bar data-o><h2>💖 Điều anh muốn nói</h2>
+<div class="env" id="env"><div class="flap">💗</div></div>
+<button class="btn" id="l-btn" data-a="openL" style="align-self:center">💌 Mở thư</button>
+<div class="paper" id="paper"></div></section>
+
+<section class="screen" id="s-settings" data-bar><h2>⚙️ Chỉnh sửa</h2><div id="set-f"></div>
+<div class="row" style="margin-top:14px"><button class="btn" data-a="save">💾 Lưu thay đổi</button><button class="btn ghost" data-a="reset">↩️ Khôi phục mặc định</button></div></section>
+<button class="ib" id="mt" data-a="pp" hidden aria-label="Bật hoặc tắt nhạc" style="position:absolute;right:12px;bottom:12px;z-index:9">🔇</button>
+</main>
+<div id="lb" hidden><button class="ib" data-a="lbx" style="top:16px;right:16px" aria-label="Đóng">✕</button><button class="ib" data-a="lbp" style="left:10px" aria-label="Ảnh trước">←</button><div class="lbc" id="lbc"></div><button class="ib" data-a="lbn" style="right:10px" aria-label="Ảnh sau">→</button></div>
+<input type="file" id="fi" accept="image/*" multiple hidden>
+<div id="toast" role="status"></div>
+<script id="seed" type="application/json">{}</script>
+<script id="app-js">
+const SRC0=document.documentElement.outerHTML;
+const LINK='https://claude.ai/artifact/4KP5q7Mu4E3W5cQwyDxzSX';
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+const clone=o=>JSON.parse(JSON.stringify(o));
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const KEY='thiep-20-10',ORDER=['home','greet','counter','memories','timeline','music','letter'],PH=['🧸','🌷','🎀','🌙','✨'];
+const defaultData={receiverName:"Em yêu",senderName:"Anh",loveDate:"14/02/2025",color:"#FF8FB8",
+greeting:"Chúc em ngày 20/10 thật vui vẻ ❤️\n\nChúc em luôn xinh đẹp, luôn vui vẻ và luôn được yêu thương.\n\nCảm ơn em vì đã xuất hiện trong cuộc đời anh.\n\nHy vọng chúng mình sẽ có thật nhiều ngày 20/10 cùng nhau.",
+letter:"Gửi em,\n\nAnh không giỏi nói lời yêu thương, nên anh viết ra đây.\n\nCảm ơn em vì đã kiên nhẫn với anh, vì những cái ôm đúng lúc và vì luôn tin anh. Với anh, em không chỉ đặc biệt vào ngày 20/10 mà là mọi ngày trong năm.\n\nMong em luôn mỉm cười thật nhiều, còn anh sẽ ở đây, bên cạnh em.",
+musicName:"Bài hát của chúng mình",musicFile:"",photos:[],
+timeline:[
+{ico:"🌱",date:"01/03/2024",title:"Lần đầu gặp nhau",text:"Ngày đầu tiên mình gặp nhau, tim anh đã lỡ một nhịp.",photo:""},
+{ico:"💗",date:"14/02/2025",title:"Ngày bắt đầu yêu",text:"Ngày em gật đầu, cũng là ngày vui nhất của anh.",photo:""},
+{ico:"📸",date:"20/10/2025",title:"Kỷ niệm đáng nhớ",text:"Chuyến đi đầu tiên cùng nhau với thật nhiều tiếng cười.",photo:""},
+{ico:"🥰",date:"Mỗi ngày",title:"Những ngày bên nhau",text:"Chỉ cần có em bên cạnh, ngày bình thường cũng thành ngày đặc biệt.",photo:""},
+{ico:"✨",date:"Sắp tới",title:"Tương lai",text:"Anh muốn cùng em đi qua thật nhiều mùa 20/10 nữa.",photo:""}]};
+let SEED={};try{SEED=JSON.parse($('#seed').textContent)||{}}catch(e){}
+const fields=['receiverName','senderName','loveDate','color','greeting','letter','musicName','musicFile','photos','timeline'],snap=d=>JSON.stringify(fields.map(k=>d[k]));
+let data=load(),draft,cur='splash',hist=[],busy=false,tickT,mi=0,lbI=0,fiM={},toastT,armed=0,rArm=0,pubBusy=false;
+function load(){let s={};try{const l=JSON.parse(localStorage.getItem(KEY))||{};if((l._base||0)===(SEED.ver||0))s=l}catch(e){}
+const {musicData,ver,...sd}=SEED;return {...clone(defaultData),...sd,...s}}
+function persist(){try{localStorage.setItem(KEY,JSON.stringify({...data,_base:SEED.ver||0}));return true}catch(e){toast('Bộ nhớ đầy hoặc bị chặn, thử bớt ảnh nhé 📸');return false}}
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('on'),2400)}
+function theme(){document.documentElement.style.setProperty('--main',data.color||'#FF8FB8')}
+
+/* navigation */
+function go(id,dir=1,noHist){if(busy||id===cur)return;const n=$('#s-'+id),o=$('#s-'+cur);
+if(!noHist)hist.push(cur);busy=true;setTimeout(()=>busy=false,460);
+n.scrollTop=0;n.className='screen '+(dir>0?'':'l');void n.offsetWidth;n.className='screen on';
+o.className='screen '+(dir>0?'l':'');cur=id;enter(id);ui()}
+function back(){if(busy)return;go(hist.pop()||'home',-1,true)}
+function step(d){const i=ORDER.indexOf(cur);if(i<0||busy)return;
+if(d>0)i===ORDER.length-1?go('menu'):go(ORDER[i+1]);else if(i>0)go(ORDER[i-1],-1,true)}
+function enter(id){clearInterval(tickT);
+({home:()=>$('#h-to').textContent='💗 '+data.receiverName,greet:resetG,counter:()=>{renderC();tickT=setInterval(tick,1000)},memories:renderM,timeline:()=>renderT(0),music:renderMu,letter:resetL,settings:()=>renderS(false)})[id]?.()}
+$$('.screen[data-bar]').forEach(s=>s.insertAdjacentHTML('afterbegin','<div class="bar"><button class="ib" data-a="back" aria-label="Quay lại">←</button><span class="sp"></span><button class="ib" data-a="home" aria-label="Trang chủ">🏠</button><button class="ib" data-a="next" aria-label="Tiếp theo">→</button></div>'));
+
+/* effects */
+const FL=['🌸','💕','🌷','✨','🎀','🧸','⭐','🌙','🌹','❤️'];
+$('#fl').innerHTML=Array.from({length:14},(_,i)=>`<i style="left:${Math.random()*100}%;font-size:${14+Math.random()*16}px;animation-duration:${10+Math.random()*10}s;animation-delay:-${Math.random()*15}s">${FL[i%10]}</i>`).join('');
+function confetti(){const c=$('#cf'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;
+const P=Array.from({length:50},()=>({x:innerWidth/2,y:innerHeight*.55,vx:(Math.random()-.5)*14,vy:-Math.random()*14-4,e:FL[Math.random()*10|0],s:16+Math.random()*14}));let f=0;
+(function s(){x.clearRect(0,0,c.width,c.height);P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.35;p.vx*=.99;x.globalAlpha=Math.max(0,1-f/110);x.font=p.s+'px serif';x.fillText(p.e,p.x,p.y)});
+++f<110?requestAnimationFrame(s):x.clearRect(0,0,c.width,c.height)})()}
+function typeTo(el,text,cb){clearInterval(el._t);el.textContent='';el.classList.add('typing');let i=0;
+el._t=setInterval(()=>{i+=2;el.textContent=text.slice(0,i);if(i>=text.length){clearInterval(el._t);el.classList.remove('typing');cb&&cb()}},32)}
+
+/* greeting + letter */
+function resetG(){$('#card').classList.remove('open');const t=$('#g-text');clearInterval(t._t);t.textContent='';t.classList.remove('typing');$('#g-to').textContent='Gửi '+data.receiverName;$('#g-btn').textContent='💌 Mở lời chúc'}
+function resetL(){$('#env').classList.remove('open');const p=$('#paper');clearInterval(p._t);p.classList.remove('show');p.textContent='';$('#l-btn').textContent='💌 Mở thư'}
+
+/* counter */
+function parseD(s){const m=/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.exec(String(s).trim());if(!m)return null;const d=new Date(+m[3],+m[2]-1,+m[1]);return d.getDate()===+m[1]&&d.getMonth()===+m[2]-1?d:null}
+function renderC(){$('#c-name').value=data.receiverName;$('#c-date').value=data.loveDate;tick()}
+function tick(){const d=parseD(data.loveDate),m=$('#c-msg');let df=d?Date.now()-d:-1;
+m.textContent=!d?'Nhập ngày theo dạng dd/mm/yyyy nhé 💕':df<0?'Ngày này còn ở phía trước nè 💕':'';if(df<0)df=0;
+const S=df/1e3|0;$('#c-d').textContent=S/86400|0;$('#c-h').textContent=(S/3600|0)%24;$('#c-m').textContent=(S/60|0)%60;$('#c-s').textContent=S%60}
+
+/* memories */
+const items=()=>data.photos.length?data.photos.map(src=>({src})):PH.map(e=>({ph:e}));
+const pv=(it,a)=>it.src?`<img src="${esc(it.src)}" alt="Ảnh kỷ niệm">`:`<div class="ph">${it.ph}</div>`;
+function renderM(d=1){const L=items();mi=(mi+L.length)%L.length;const m=$('#m-main');m.style.setProperty('--d',d);m.innerHTML=`<div class="pv">${pv(L[mi])}</div>`;
+$('#m-dots').innerHTML=L.map((_,i)=>`<i class="${i===mi?'a':''}"></i>`).join('');
+$('#m-grid').innerHTML=L.map((it,i)=>`<button data-a="ph:${i}" aria-label="Ảnh ${i+1}">${pv(it)}</button>`).join('');
+$('#m-note').textContent=data.photos.length?`${data.photos.length}/10 ảnh`:'Đang dùng ảnh mẫu. Thêm ảnh của hai bạn để thay nhé 💕'}
+function photo(d){mi+=d;renderM(d)}
+function lb(i){const L=items();lbI=(i+L.length)%L.length;$('#lbc').innerHTML=pv(L[lbI]);$('#lbc').style.animation='none';void $('#lbc').offsetWidth;$('#lbc').style.animation='';$('#lb').hidden=false}
+function pick(m){fiM=m;$('#fi').click()}
+function shrink(f,max){return new Promise((ok,no)=>{const r=new FileReader();r.onerror=no;r.onload=()=>{const im=new Image();im.onerror=no;im.onload=()=>{const k=Math.min(1,max/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);ok(c.toDataURL('image/jpeg',.7))};im.src=r.result};r.readAsDataURL(f)})}
+$('#fi').onchange=async()=>{const fs=[...$('#fi').files],m=fiM;$('#fi').value='';if(!fs.length)return;
+try{if(m.t==='set'||m.t==='rep'||m.t==='tl')collect();const tgt=m.t==='mem'?data:draft;
+for(const f of fs){if(m.t==='tl'){tgt.timeline[m.i].photo=await shrink(f,600);break}
+const s=await shrink(f,800);if(m.t==='rep'){tgt.photos[m.i]=s;break}
+if(tgt.photos.length<10)tgt.photos.push(s);else{toast('Tối đa 10 ảnh thôi nè 📸');break}}
+if(m.t==='mem'){persist();renderM()}else renderS(true)}catch(e){toast('Không đọc được ảnh này, thử ảnh khác nhé')}}
+
+/* timeline */
+function renderT(i){data.timeline.length||0;const L=data.timeline,t=L[i];
+$('#t-steps').innerHTML=L.map((x,j)=>`<button class="${j===i?'a':''}" data-a="tl:${j}" aria-label="${esc(x.title)}">${esc(x.ico)}</button>`).join('');
+$('#t-card').innerHTML=`<div class="em">${esc(t.ico)}</div><small>${esc(t.date)}</small><h3>${esc(t.title)}</h3><p>${esc(t.text)}</p>${t.photo?`<img src="${esc(t.photo)}" alt="">`:''}`}
+
+/* music */
+const au=new Audio();au.preload='auto';au.loop=true;au.volume=.8;let seeking=false;
+const fmt=s=>isFinite(s)?(s/60|0)+':'+String(s%60|0).padStart(2,'0'):'0:00';
+function renderMu(){$('#mu-name').textContent='🎵 '+data.musicName;$('#mu-file').textContent=data.musicFile?'📁 '+data.musicFile:'Chưa có nhạc. Bấm Chọn file nhạc để tải lên nhé 🎶';ui()}
+function ui(){const mt=$('#mt');mt.hidden=!au.getAttribute('src')||cur==='splash';mt.textContent=au.paused?'🔇':'🔊';$('#pp').textContent=au.paused?'▶️':'⏸';$('#disc').classList.toggle('spin',!au.paused);
+if(!seeking)$('#mu-pg').value=au.duration?au.currentTime/au.duration*1000:0;$('#mu-t').textContent=fmt(au.currentTime)+' / '+fmt(au.duration)}
+['timeupdate','play','pause','ended','loadedmetadata'].forEach(e=>au.addEventListener(e,ui));
+au.addEventListener('error',()=>{if(au.getAttribute('src'))$('#mu-hint').textContent='File nhạc này chưa phát được, thử file khác (.mp3, .m4a) nhé 🎵'});
+$('#mu-pg').addEventListener('pointerdown',()=>seeking=true);
+$('#mu-pg').addEventListener('input',e=>{if(au.duration)au.currentTime=e.target.value/1000*au.duration});
+$('#mu-pg').addEventListener('change',()=>{seeking=false});
+$('#mu-vol').addEventListener('input',e=>au.volume=+e.target.value);
+function play(){const h=$('#mu-hint');if(!au.getAttribute('src')){h.textContent='Hãy chọn file nhạc trước rồi bấm Bắt đầu nghe nhé 🎶';return}
+h.textContent='';au.play().catch(()=>h.textContent='Chạm vào nút Play để nghe nhạc nhé ❤️')}
+
+/* audio file (IndexedDB) */
+const idb=()=>new Promise((ok,no)=>{const r=indexedDB.open('thiep',1);r.onupgradeneeded=()=>r.result.createObjectStore('f');r.onsuccess=()=>ok(r.result);r.onerror=()=>no(r.error)});
+const idbOp=(mode,fn)=>idb().then(db=>new Promise((ok,no)=>{const t=db.transaction('f',mode),q=fn(t.objectStore('f'));t.oncomplete=()=>ok(q&&q.result);t.onerror=()=>no(t.error)}));
+function useBlob(b){if(au.dataset.o)URL.revokeObjectURL(au.dataset.o);au.dataset.o='';if(!b){au.pause();au.removeAttribute('src');au.load();ui();return}const u=URL.createObjectURL(b);au.src=u;au.dataset.o=u;ui()}
+async function setAudio(b,name){try{await idbOp('readwrite',s=>b?s.put(b,'audio'):s.delete('audio'))}catch(e){toast('Không lưu được file nhạc trên thiết bị này');return false}
+useBlob(b);data.musicFile=name;if(draft)draft.musicFile=name;persist();return true}
+idbOp('readonly',s=>s.get('audio')).then(b=>{if(b&&data.musicFile)useBlob(b)}).catch(()=>{});
+$('#fa').onchange=async()=>{const f=$('#fa').files[0];$('#fa').value='';if(!f)return;if(f.size>30e6){toast('File nhạc nặng quá, chọn file dưới 30MB nhé 🎶');return}
+if(cur==='settings')collect();if(await setAudio(f,f.name)){cur==='settings'?renderS(true):renderMu();toast('Đã tải nhạc lên 🎶')}};
+
+/* publish: the page saves its own content so the shared link shows it to everyone */
+const b2u=b=>new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>ok(r.result);r.onerror=no;r.readAsDataURL(b)});
+function seedMusic(u){try{const[h,b]=u.split(','),m=/data:([^;]+)/.exec(h)[1],s=atob(b),a=new Uint8Array(s.length);for(let i=0;i<s.length;i++)a[i]=s.charCodeAt(i);useBlob(new Blob([a],{type:m}))}catch(e){}}
+if(SEED.musicData&&data.musicFile)seedMusic(SEED.musicData);
+function autoP(){if(au.getAttribute('src'))au.play().catch(()=>{toast('Chạm 🔇 góc phải để bật nhạc nhé ❤️');$('#mu-hint').textContent='Chạm vào nút Play để nghe nhạc nhé ❤️'})}
+async function publish(){if(pubBusy)return;pubBusy=true;
+try{const art=window.claude&&await window.claude.use('artifact');if(!art){toast('Chỉ đăng được khi mở từ link claude.ai của món quà nhé');return}
+const seed={ver:Date.now()};fields.forEach(k=>seed[k]=data[k]);seed.musicData='';
+if(data.musicFile){let b=null;try{b=await idbOp('readonly',s=>s.get('audio'))}catch(e){}
+if(b){if(b.size>8e6){toast('File nhạc trên 8MB nên chưa đăng kèm được, chọn file nhỏ hơn nhé 🎶');return}seed.musicData=await b2u(b)}}
+const d=new DOMParser().parseFromString(SRC0,'text/html'),h=d.documentElement;
+[...h.attributes].forEach(a=>a.name!=='lang'&&h.removeAttribute(a.name));
+d.querySelectorAll('script').forEach(s=>{if(!['seed','app-js'].includes(s.id))s.remove()});
+d.querySelectorAll('head style').forEach((s,i)=>i&&s.remove());
+[...d.body.children].forEach(c=>{if(!['fl','cf','app','lb','fi','toast','seed','app-js'].includes(c.id))c.remove()});
+d.getElementById('seed').textContent=JSON.stringify(seed).replace(/</g,'\\u003c');
+const html='<!DOCTYPE html>\n'+h.outerHTML;
+if(html.length>15.5e6){toast('Nội dung nặng quá để đăng, thử bớt ảnh hoặc nhạc nhé');return}
+toast('Đang đăng… vài giây nhé 🚀');sessionStorage.setItem('pubd','1');
+await art.publish(html)}
+catch(e){sessionStorage.removeItem('pubd');const c=e&&e.code;toast(c==='not_writer'||c==='not_granted'?'Chỉ chủ món quà mới đăng được nhé':c==='too_large'?'Nội dung nặng quá để đăng':c==='conflict'?'Trang vừa được cập nhật, thử lại nhé':'Chưa đăng được, thử lại sau nhé')}
+finally{pubBusy=false}}
+try{if(sessionStorage.getItem('pubd')){sessionStorage.removeItem('pubd');setTimeout(()=>toast('Đã đăng! Bấm Chia sẻ để gửi link 💕'),600)}}catch(e){}
+
+/* settings */
+function renderS(keep){if(!keep)draft=clone(data);const sc=$('#s-settings').scrollTop;
+const f=(l,k,v,ta)=>`<label>${l}${ta?`<textarea data-k="${k}" rows="6">${esc(v)}</textarea>`:`<input data-k="${k}" value="${esc(v)}">`}</label>`;
+$('#set-f').innerHTML=`<div class="glass" style="padding:4px 18px 16px">${f('Tên người nhận','receiverName',draft.receiverName)}${f('Tên người gửi','senderName',draft.senderName)}${f('Ngày yêu nhau (dd/mm/yyyy)','loveDate',draft.loveDate)}${f('Lời chúc','greeting',draft.greeting,1)}${f('Nội dung thư','letter',draft.letter,1)}${f('Tên bài hát','musicName',draft.musicName)}<label>File nhạc<small style="display:block;font-weight:500;margin:2px 0 6px">${draft.musicFile?'📁 '+esc(draft.musicFile):'Chưa có file nhạc'}</small></label><div class="row"><button class="btn ghost" data-a="pickA">🎶 Tải file nhạc lên</button>${draft.musicFile?'<button class="btn ghost" data-a="delA">🗑️ Xóa nhạc</button>':''}</div><label>Màu chủ đạo<input type="color" data-k="color" value="${esc(draft.color)}"></label></div>
+<h2 style="font-size:20px">📸 Ảnh (${draft.photos.length}/10)</h2><div class="glass" style="padding:14px"><div class="thumbs">${draft.photos.map((s,i)=>`<button data-a="rep:${i}" aria-label="Đổi ảnh ${i+1}"><img src="${esc(s)}" alt=""><span class="x" data-a="del:${i}" aria-label="Xóa ảnh">✕</span></button>`).join('')}</div><button class="btn ghost" data-a="adds" style="width:100%">➕ Thêm ảnh (chạm ảnh để đổi)</button></div>
+<h2 style="font-size:20px">💞 Timeline</h2>${draft.timeline.map((t,i)=>`<div class="glass" style="padding:4px 18px 16px;margin-bottom:12px"><label>Biểu tượng<input data-t="${i}.ico" value="${esc(t.ico)}" maxlength="4"></label><label>Ngày<input data-t="${i}.date" value="${esc(t.date)}"></label><label>Tiêu đề<input data-t="${i}.title" value="${esc(t.title)}"></label><label>Nội dung<textarea data-t="${i}.text" rows="3">${esc(t.text)}</textarea></label>${t.photo?`<img src="${esc(t.photo)}" alt="" style="width:100%;max-height:140px;object-fit:cover;border-radius:14px;margin-bottom:8px">`:''}<button class="btn ghost" data-a="tlp:${i}" style="width:100%">🖼️ ${t.photo?'Đổi':'Thêm'} ảnh</button></div>`).join('')}`;
+$('#s-settings').scrollTop=sc}
+function collect(){$$('#set-f [data-k]').forEach(e=>draft[e.dataset.k]=e.value);$$('#set-f [data-t]').forEach(e=>{const[i,k]=e.dataset.t.split('.');draft.timeline[i][k]=e.value})}
+
+/* share */
+async function share(){const dirty=!SEED.ver||snap(data)!==snap(SEED);
+if(dirty){if(Date.now()<armed){armed=0;publish();return}armed=Date.now()+8000;toast('Nội dung mới chưa đăng lên link. Bấm Chia sẻ lần nữa để đăng nhé 🚀 (trang sẽ tải lại)');return}
+const u=LINK;
+try{if(navigator.share){await navigator.share({title:'Thiệp 20/10 💗',text:'Có một món quà dành cho em 💗',url:u});return}}catch(e){if(e&&e.name==='AbortError')return}
+try{await navigator.clipboard.writeText(u)}catch(e){const t=document.createElement('textarea');t.value=u;document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(_){}t.remove()}
+toast('Đã copy link rồi nè 💕')}
+
+/* actions */
+const A={
+open(){confetti();go('home');autoP()},go:id=>go(id),home:()=>go('home',-1),back,next:()=>step(1),prev:()=>step(-1),share,
+openG(){$('#card').classList.add('open');typeTo($('#g-text'),data.greeting);confetti();$('#g-btn').textContent='↺ Xem lại'},
+openL(){$('#env').classList.add('open');$('#l-btn').textContent='↺ Đọc lại';const p=$('#paper');p.classList.remove('show');clearInterval(p._t);p.textContent='';
+setTimeout(()=>{p.classList.add('show');typeTo(p,data.letter+'\n\nYêu em ❤️\n— '+data.senderName)},650)},
+cupd(){const d=$('#c-date').value;if(!parseD(d)){toast('Ngày cần dạng dd/mm/yyyy nhé');return}data.receiverName=$('#c-name').value.trim()||data.receiverName;data.loveDate=d.trim();persist();tick();toast('Đã cập nhật 💕')},
+mp:()=>photo(-1),mn:()=>photo(1),ph(i){lb(i===undefined?mi:+i)},addph:()=>pick({t:'mem'}),
+lbx:()=>$('#lb').hidden=true,lbp:()=>lb(lbI-1),lbn:()=>lb(lbI+1),
+tl:i=>renderT(+i),
+pp(){au.paused?play():au.pause()},
+startM(){play()},pickA:()=>$('#fa').click(),async delA(){if(cur==='settings')collect();if(await setAudio(null,'')){renderS(true);toast('Đã xóa nhạc')}},
+adds:()=>pick({t:'set'}),rep:i=>pick({t:'rep',i:+i}),tlp:i=>pick({t:'tl',i:+i}),
+del(i){collect();draft.photos.splice(+i,1);renderS(true)},
+save(){collect();if(!parseD(draft.loveDate)){toast('Ngày yêu nhau cần dạng dd/mm/yyyy nhé');return}data=draft;persist();theme();hist=[];toast('Đã lưu rồi nè 💕');go('home',-1,true)},
+reset(){if(Date.now()>rArm){rArm=Date.now()+6000;toast('Bấm Khôi phục thêm lần nữa để xác nhận ↩️');return}rArm=0;data=clone(defaultData);persist();theme();setAudio(null,'');renderS(false);toast('Đã khôi phục mặc định')}};
+document.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b)return;e.stopPropagation();const[a,p]=b.dataset.a.split(':');A[a]&&A[a](p,b)});
+$('#lb').addEventListener('click',e=>{if(e.target.id==='lb')A.lbx()});
+$('#m-main').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();A.ph()}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')A.lbx();if(/INPUT|TEXTAREA/.test(document.activeElement.tagName))return;
+if(!$('#lb').hidden){if(e.key==='ArrowRight')A.lbn();if(e.key==='ArrowLeft')A.lbp();return}
+if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});
+
+/* swipe */
+let sx=null,sy,st;const app=$('#app');
+app.addEventListener('touchstart',e=>{const t=e.touches[0];sx=t.clientX;sy=t.clientY;st=e.target},{passive:true});
+app.addEventListener('touchend',e=>{if(sx===null)return;const t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;sx=null;
+if(Math.abs(dx)<60||Math.abs(dx)<Math.abs(dy)*1.5)return;
+if(st.closest('input,textarea,select,label,.nosw'))return;
+if(cur==='memories'&&st.closest('#m-main')){photo(dx<0?1:-1);return}
+if(dx<0)step(1);else step(-1)},{passive:true});
+
+theme();$('#h-to').textContent='💗 '+data.receiverName;
+</script>
+</body>
+</html>
